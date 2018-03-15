@@ -1,0 +1,23 @@
+<form class="example-form">
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="number"  placeholder="Nhap tien" #giaInp (input)="gia$.next(+giaInp.value)">
+    <mat-hint align="end"></mat-hint>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="number" placeholder="Nhap so luong" #slInp (input)="onKey($event,slInp.value) " >
+    <mat-hint align="end"></mat-hint>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="number" placeholder="Nhap sale" #saleInp (input)="sale$.next(+saleInp.value)">
+    <mat-hint align="end"></mat-hint>
+  </mat-form-field>
+ <p>Thanh tien:{{isvalue}}</p>
+</form>
+<h2>First name: {{name}}</h2>
+<button class='btn btn-primary' (click)="valueChanged()">Click me</button>
+<tr  *ngFor="let value1 of value ; trackBy: trackByFn;">
+  <td>{{value1.name}}</td>
+</tr>
+<ng-content></ng-content>
+
